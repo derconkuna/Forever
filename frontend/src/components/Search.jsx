@@ -1,20 +1,19 @@
-import React, { useContext, useEffect, useState } from "react";
 import { ProductContext } from "../context/ProductContext";
 import { assets } from "../assets/assets";
-import { useLocation, useSearchParams } from "react-router-dom";
+import { useLocation } from "react-router-dom";
+import { useContext, useEffect, useState } from "react";
 
 const Search = () => {
+  const location = useLocation();
   const { search, setSearch, showSearch, setShowSearch } =
     useContext(ProductContext);
-  const [visible, setVisble] = useState(false);
-
-  const location = useLocation();
+  const [visible, setVisible] = useState(false);
 
   useEffect(() => {
     if (location.pathname.includes("collection")) {
-      setVisble(true);
+      setVisible(true);
     } else {
-      setVisble(false);
+      setVisible(false);
     }
   }, [location]);
 
