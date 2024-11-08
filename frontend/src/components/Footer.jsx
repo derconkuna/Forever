@@ -4,8 +4,8 @@ import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
-    <div>
-      <div className=" flex flex-col  justify-between sm:grid grid-cols-[3fr_1fr_1fr]  gap-12 my-10 mt-32  ">
+    <div className="">
+      <div className=" flex flex-col  justify-between sm:grid grid-cols-[3fr_1fr_1fr]  gap-12 my-10 mt-24  ">
         <div className=" ">
           <img src={assets.logo} className=" w-36 mb-4 " alt="" />
           <p className="w-full  md:w-2/3">
@@ -43,7 +43,7 @@ const Footer = () => {
 
       <p className=" w-full border-[1px]  border-gray-300"></p>
 
-      <p className=" text-center font-semibold mt-3">
+      <p className=" text-center font-semibold mt-3 py-4">
         Copyright2024@humaniholdings.co.za - All Rights Reserved
       </p>
     </div>

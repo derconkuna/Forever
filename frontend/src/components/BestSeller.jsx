@@ -13,7 +13,7 @@ const BestSeller = () => {
     setBestSelling(bestProducts.slice(0, 5));
   }, []);
   return (
-    <div>
+    <div className=" pt-8">
       <LatestCollection text1={"best"} text2={"sellers"} />
       <p className=" text-xs sm:text-sm md:text-base text-center py-6">
         Lorem ipsum dolor sit amet consectetur, adipisicing elit. Alias odit
