@@ -8,7 +8,7 @@ const Navbar = () => {
   const [visible, setVisible] = useState(false);
   const { setShowSearch, showSearch, cartCount } = useContext(ProductContext);
   return (
-    <div className=" flex items-center justify-between py-6 ">
+    <div className=" flex items-center justify-between py-4 ">
       <Link to="/">
         <img src={assets.logo} alt="" className=" w-36" />
       </Link>
@@ -43,7 +43,10 @@ const Navbar = () => {
           alt=""
         />
         <div className=" group relative">
-          <img src={assets.profile_icon} className=" w-5" alt="" />
+          <Link to='/login'>
+            <img src={assets.profile_icon} className=" w-5" alt="" />
+          </Link>
+
           <div className=" group-hover:block hidden absolute right-0 pt-3 dropdown-menu">
             <div className=" flex flex-col gap-2 w-36 bg-slate-100 py-3 px-4 ">
               <p className=" cursor-pointer hover:text-black">My Profile</p>

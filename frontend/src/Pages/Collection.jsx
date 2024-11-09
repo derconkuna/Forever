@@ -78,7 +78,7 @@ const Collection = () => {
   }, [category, subCategory, setShowSearch, search]);
 
   return (
-    <div className=" flex flex-col gap-6 sm:flex-row sm:gap-1 py-6">
+    <div className=" flex flex-col gap-6 sm:flex-row sm:gap-1 py-6 border-t">
       <div className=" flex flex-col gap-5 min-w-64 ">
         <p
           onClick={() => setVisible(!visible)}

@@ -13,6 +13,7 @@ const Checkout = () => {
         <div className=" w-full">
           <div className=" flex flex-col gap-2 w-full sm:flex-row sm:gap-3">
             <input
+              required
               type="text"
               placeholder="First name"
               className=" border-2 border-gray-200 outline-none px-8 py-1"
@@ -75,17 +76,25 @@ const Checkout = () => {
         <CartTotal />
 
         <div className=" mb-5">
-          <LatestCollection text1={'payment'} text2={'method'} />
+          <LatestCollection text1={"payment"} text2={"method"} />
           <div className=" w-full grid grid-cols-3 gap-3 sm:grid-cols-3 py-3">
-            <img src={assets.stripe_logo} className=" h-8 border w-full sm:px-16  "/>
-            <img src={assets.razorpay_logo}  className=" h-8 border w-full sm:px-16 " />
-            <p className=" text-xs py-[5px] px-2px sm:text-base text-center uppercase border sm:px-6 sm:py-[1px]">Cash on delivery</p>
+            <img
+              src={assets.stripe_logo}
+              className=" h-8 border w-full sm:px-16  "
+            />
+            <img
+              src={assets.razorpay_logo}
+              className=" h-8 border w-full sm:px-16 "
+            />
+            <p className=" text-xs py-[5px] px-2px sm:text-base text-center uppercase border sm:px-6 sm:py-[1px]">
+              Cash on delivery
+            </p>
           </div>
         </div>
 
         <Button>Place order</Button>
       </div>
-    </div> 
+    </div>
   );
 };
 
