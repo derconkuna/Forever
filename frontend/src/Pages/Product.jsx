@@ -7,7 +7,7 @@ import RelatedProducts from "./RelatedProducts";
 const Product = () => {
   const { productId } = useParams();
   const [productData, setProductData] = useState(false);
-  const { products } = useContext(ProductContext);
+  const { products,addToCart } = useContext(ProductContext);
   const [image, setImage] = useState("");
   const [size, setSize] = useState("");
 
@@ -16,7 +16,6 @@ const Product = () => {
       if (item._id == productId) {
         setProductData(item);
         setImage(item.image[0]);
-        console.log(item);
         return null;
       }
     });
@@ -78,7 +77,10 @@ const Product = () => {
             ))}
           </div>
 
-          <button className=" bg-black text-white px-8 py-3 uppercase my-5 hover:scale-90 mb-8">
+          <button
+            onClick={() => addToCart(productData._id, size)}
+            className=" bg-black text-white px-8 py-3 uppercase my-5 hover:scale-90 mb-8"
+          >
             Add to Cart
           </button>
 
@@ -115,7 +117,10 @@ const Product = () => {
 
       {/* Display Related Products */}
 
-      <RelatedProducts category={productData.category} subCategory={productData.subCategory}/>
+      <RelatedProducts
+        category={productData.category}
+        subCategory={productData.subCategory}
+      />
     </div>
   ) : null;
 };

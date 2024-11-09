@@ -6,7 +6,7 @@ import { useContext } from "react";
 
 const Navbar = () => {
   const [visible, setVisible] = useState(false);
-  const { setShowSearch, showSearch } = useContext(ProductContext);
+  const { setShowSearch, showSearch, cartCount } = useContext(ProductContext);
   return (
     <div className=" flex items-center justify-between py-6 ">
       <Link to="/">
@@ -56,8 +56,8 @@ const Navbar = () => {
         <Link to="/cart">
           <div className=" relative ">
             <img src={assets.cart_icon} className=" w-5" alt="" />
-            <p className=" absolute right-[-7px] bottom-[-5px]  bg-black leading-4 text-white aspect-square transition-all rounded-full ">
-              10
+            <p className=" absolute right-[-13px] bottom-[-5px] text-center  bg-black w-5 leading-5 text-[15px] text-white aspect-square  rounded-full ">
+              {cartCount()}
             </p>
           </div>
         </Link>

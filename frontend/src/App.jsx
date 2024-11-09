@@ -9,6 +9,8 @@ import Orders from "./Pages/Orders";
 import PlaceOrder from "./Pages/PlaceOrder";
 import Product from "./Pages/Product";
 import AppLayout from "./Pages/AppLayout";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const App = () => {
   const router = createBrowserRouter([
@@ -29,6 +31,7 @@ const App = () => {
   ]);
   return (
     <div className=" px-4 sm:px-[5vw] md:px-[7vw] lg-[9vw]">
+      <ToastContainer />
       <RouterProvider router={router} />
     </div>
   );
