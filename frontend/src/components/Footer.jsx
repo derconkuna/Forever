@@ -36,15 +36,15 @@ const Footer = () => {
           <p className="uppercase font-semibold text-2xl text-slate-900 mb-4">
             Get in touch
           </p>
-          <p>011 289 5871</p>
-          <p>info@humaniholdings.co.za</p>
+          <p>073 derco</p>
+          <p>derconkuna021@gmail.com</p>
         </div>
       </div>
 
       <p className=" w-full border-[1px]  border-gray-300"></p>
 
       <p className=" text-center font-semibold mt-3 py-4">
-        Copyright2024@humaniholdings.co.za - All Rights Reserved
+        Copyright2024@derconkuna021@gmail.com - All Rights Reserved
       </p>
     </div>
   );
