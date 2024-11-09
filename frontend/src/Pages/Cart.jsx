@@ -2,9 +2,12 @@ import { useContext, useEffect, useState } from "react";
 import { ProductContext } from "../context/ProductContext";
 import LatestCollection from "../components/LatestCollection";
 import { assets } from "../assets/assets";
+import CartTotal from "../components/CartTotal";
+import Button from "../components/Button";
+import { Link } from "react-router-dom";
 
 const Cart = () => {
-  const { products, currency, cartItems, updateQuantity } =
+  const { products, currency, cartItems, updateQuantity, getCartTotalAmount } =
     useContext(ProductContext);
   const [cartData, setCartData] = useState([]);
 
@@ -23,6 +26,7 @@ const Cart = () => {
     }
     setCartData(tempData);
   }, [cartItems]);
+
   return (
     <div className=" border-t-2 pt-8">
       <div className=" text-2xl pb-6">
@@ -62,6 +66,9 @@ const Cart = () => {
               </div>
 
               <input
+                onChange={(e) =>
+                  updateQuantity(item._id, item.size, Number(e.target.value))
+                }
                 type="number"
                 min={1}
                 defaultValue={item.quantity}
@@ -69,9 +76,7 @@ const Cart = () => {
               />
 
               <img
-                onClick={() =>
-                  updateQuantity(item._id, item.size, 0)
-                }
+                onClick={() => updateQuantity(item._id, item.size, 0)}
                 src={assets.bin_icon}
                 className=" w-5 cursor-pointer"
                 alt=""
@@ -80,6 +85,17 @@ const Cart = () => {
           );
         })}
       </div>
+
+      {cartData.length > 0 ? (
+        <div className=" flex justify-end py-8">
+          <div className=" w-full sm:w-[450px]">
+            <CartTotal />
+            <Link to='/checkout'>
+              <Button>Checkout</Button>
+            </Link>
+          </div>
+        </div>
+      ) : null}
     </div>
   );
 };

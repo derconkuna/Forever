@@ -11,6 +11,7 @@ import Product from "./Pages/Product";
 import AppLayout from "./Pages/AppLayout";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import Checkout from "./components/Checkout";
 
 const App = () => {
   const router = createBrowserRouter([
@@ -26,6 +27,7 @@ const App = () => {
         { path: "/orders", element: <Orders /> },
         { path: "/placeorder", element: <PlaceOrder /> },
         { path: "/product/:productId", element: <Product /> },
+        { path: "/checkout", element: <Checkout /> },
       ],
     },
   ]);
